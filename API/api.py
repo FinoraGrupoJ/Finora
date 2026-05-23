@@ -20,7 +20,8 @@ from modules.proyecciones.proyecciones_routes import register_proyecciones_route
 # Configuración básica
 # --------------------------
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg://postgres:postgre@127.0.0.1:5433/FinoraBD'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg://postgres:postgre@127.0.0.1:5433/FinoraBD'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://neondb_owner:npg_7NcOjKAsF3mP@ep-sparkling-salad-aqok49kv-pooler.c-8.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'supersecreto_finora'
 

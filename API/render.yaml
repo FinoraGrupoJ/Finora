@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: finora-api
+    env: python
+    plan: free
+    rootDir: API
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn api:app
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+
+      - key: DB_PROVIDER
+        value: postgres
+
+      - key: DB_POSTGRES
+        sync: false
+
+      - key: JWT_SECRET_KEY
+        sync: false
+
+      - key: SECRET_KEY
+        sync: false
