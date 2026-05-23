@@ -30,7 +30,16 @@ ma = Marshmallow(app)
 
 CORS(
     app,
-    resources={r"/*": {"origins": "http://localhost:5173"}},
+    resources={
+        r"/*": {
+            "origins": [
+                "http://localhost:5173",
+                "https://finora-frontend-ycql.onrender.com"
+            ],
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+            "allow_headers": ["Content-Type", "Authorization"]
+        }
+    },
     supports_credentials=True,
     expose_headers=["Content-Type", "Authorization"]
 )
